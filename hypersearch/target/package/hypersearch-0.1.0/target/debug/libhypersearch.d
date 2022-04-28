@@ -1,0 +1,1 @@
+/Users/jafioti/Documents/other/hypersearch/hypersearch/target/package/hypersearch-0.1.0/target/debug/libhypersearch.rlib: /Users/jafioti/Documents/other/hypersearch/hypersearch/target/package/hypersearch-0.1.0/src/lib.rs
