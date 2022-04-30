@@ -5,6 +5,10 @@ edition = "2021"
 description = "Macro library for hypersearch"
 license = "MIT OR Apache-2.0"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+proc-macro = true
 
 [dependencies]
+syn = {version="1.0.92", features=["full"]}
+quote = "1.0.18"
+proc-macro2 = "1.0.37"
