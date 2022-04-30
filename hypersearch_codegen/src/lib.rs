@@ -9,10 +9,10 @@ use syn::{parse_macro_input, ItemStruct};
 pub fn hyperparameters(_header: TokenStream, input_struct: TokenStream) -> TokenStream {
     let orig_struct = parse_macro_input!(input_struct as ItemStruct);
     let field_names = orig_struct.fields.iter().map(|field| field.ident.as_ref().expect("Tuple structs are not allowed."));
-    let field_names1 = orig_struct.fields.iter().map(|field| field.ident.as_ref().expect("Tuple structs are not allowed."));
-    let field_names3 = orig_struct.fields.iter().map(|field| field.ident.as_ref().expect("Tuple structs are not allowed."));
-    let field_names4 = orig_struct.fields.iter().map(|field| field.ident.as_ref().expect("Tuple structs are not allowed."));
-    let field_names5 = orig_struct.fields.iter().map(|field| field.ident.as_ref().expect("Tuple structs are not allowed."));
+    let field_names1 = field_names.clone();
+    let field_names3 = field_names.clone();
+    let field_names4 = field_names.clone();
+    let field_names5 = field_names.clone();
     let num_fields = field_names4.count();
     let field_types = orig_struct.fields.iter().map(|field| &field.ty);
     let field_types1 = orig_struct.fields.iter().map(|field| {
@@ -25,8 +25,6 @@ pub fn hyperparameters(_header: TokenStream, input_struct: TokenStream) -> Token
 
 
     let indexes = 0..num_fields;
-    //let ref_types: Vec<proc_macro2::TokenStream> = field_names3.zip(field_types).map(|(ident, ty)| quote!{#ident: &'a #ty}).collect();
-
     let orig_struct_ident = orig_struct.ident.clone();
     let permutation_struct_ident = Ident::new(&format!("{}Permutations", orig_struct_ident), Span::call_site());
 

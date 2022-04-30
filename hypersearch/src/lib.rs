@@ -1,6 +1,8 @@
+pub use hypersearch_codegen::hyperparameters;
+
 #[cfg(test)]
 mod tests {
-    use hypersearch_codegen::hyperparameters;
+    use crate::hyperparameters;
 
     #[test]
     fn test_hyperparameter_search() {
